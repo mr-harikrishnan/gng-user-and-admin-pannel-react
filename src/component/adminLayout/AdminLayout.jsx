@@ -18,9 +18,11 @@ function AdminLayout() {
                 <div >
                     <AsideBar isSideBarOpen={isSideBarOpen} toggleSideBar={toggleSideBar}></AsideBar>
                 </div>
-                <div className='bg-[#F1F1FA] w-full'>
+                <div className='bg-[#F1F1FA] w-full '>
                     <AdminNavBar toggleSideBar={toggleSideBar}></AdminNavBar>
-                    <Outlet></Outlet>
+                    <div className='h-screen overflow-auto pb-20'>
+                        <Outlet></Outlet>
+                    </div>
                 </div>
                 
 

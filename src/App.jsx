@@ -18,7 +18,7 @@ function App() {
       <div className='h-screen w-full overflow-hidden'>
         <Routes>
 
-          <Route path='/' element={<UserLayout></UserLayout>}></Route>
+        <Route path='/' element={<UserLayout></UserLayout>}></Route>
 
 
           <Route path='/admin' element={<AdminLayout></AdminLayout>}>
