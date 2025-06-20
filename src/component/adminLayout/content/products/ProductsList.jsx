@@ -10,7 +10,7 @@ function ProductsList() {
 
       {/* Top Button */}
       <div className="flex justify-end mb-6">
-        <Link to={"/product-create"}>
+        <Link to={"product-create"}>
           <button className="bg-gradient-to-r from-[#232232] to-[#9A98B4] cursor-pointer hover:from-[#625f8b] hover:to-[#c3c1e3] text-white px-4 py-2 rounded-lg shadow-md font-semibold transition duration-300">
             + Create Product
           </button>

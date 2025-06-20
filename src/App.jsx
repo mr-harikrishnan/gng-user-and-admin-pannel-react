@@ -8,6 +8,7 @@ import UserLayout from './component/userLayout/UserLayout'
 import UserCreate from './component/adminLayout/content/users/UserCreate'
 import ProductsList from './component/adminLayout/content/products/ProductsList'
 import useProducts from './hooks/useProducts'
+import ProductCreate from './component/adminLayout/content/products/ProductsCreate'
 
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='users' element={<UsersList></UsersList>}></Route>
             <Route path='/admin/users/usercreate' element={<UserCreate></UserCreate>}></Route>
             <Route path='products' element={<ProductsList></ProductsList>}></Route>
+            <Route path='/admin/products/product-create' element={<ProductCreate></ProductCreate>}></Route>
 
           </Route>
 
