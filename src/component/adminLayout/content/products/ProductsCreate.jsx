@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useFormik } from "formik";
 
 
@@ -13,7 +14,7 @@ function ProductCreate() {
             title: "",
             image: "",
             description: "",
-            productDetails: [{ key: "", value: "", qty: "" }]
+            details: [{ key: "", value: "", qty: "" }]
         },
 
         validate: (values) => {
@@ -40,7 +41,7 @@ function ProductCreate() {
 
             // -------PRODUCT DETAILS MAPING VALIDATIONS---------//
 
-            const productDetailsErrors = values.productDetails.map((item) => {
+            const detailsErrors = values.details.map((item) => {
 
                 let detailsErrors = {}
                 if (!item.key) {
@@ -72,27 +73,32 @@ function ProductCreate() {
             })
 
 
-            if (productDetailsErrors.some((obj) => Object.keys(obj).length > 0)) {
-                errors.productDetails = productDetailsErrors
+            if (detailsErrors.some((obj) => Object.keys(obj).length > 0)) {
+                errors.details = detailsErrors
             }
 
             return errors
         },
-        onSubmit: (values) => {
-            console.log(values)
+        onSubmit: async (values) => {
+            try {
+                const newdetails = await axios.post("https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products", values)
+
+            } catch (error) {
+                console.log(error)
+            }
         }
     })
 
-    const addProductDetails = () => {
-        const newProductDetails = [...formik.values.productDetails, { key: "", value: "", qty: "" }]
-        formik.setFieldValue("productDetails", newProductDetails)
+    const adddetails = () => {
+        const newdetails = [...formik.values.details, { key: "", value: "", qty: "" }]
+        formik.setFieldValue("details", newdetails)
     }
 
 
-    const deleteProductDetails = (index) => {
-        const updatedDetails = [...formik.values.productDetails]
+    const deletedetails = (index) => {
+        const updatedDetails = [...formik.values.details]
         updatedDetails.splice(index, 1)
-        formik.setFieldValue("productDetails", updatedDetails)
+        formik.setFieldValue("details", updatedDetails)
     }
 
 
@@ -163,7 +169,7 @@ function ProductCreate() {
                             <button
                                 type="button"
                                 onClick={() => {
-                                    addProductDetails()
+                                    adddetails()
                                 }}
 
                                 className="h-8 w-8 pb-1  cursor-pointer flex items-center justify-center bg-gradient-to-br from-[#232232] to-indigo-800 text-white text-2xl rounded-full shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300"
@@ -175,7 +181,7 @@ function ProductCreate() {
 
                     {/* Product Details */}
                     <div className="border border-gray-300 md:col-span-2 p-4 rounded-lg bg-gray-50 space-y-6">
-                        {formik.values.productDetails.map((detail, index) => (
+                        {formik.values.details.map((detail, index) => (
                             <div key={index} className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
 
                                 {/* Size */}
@@ -185,7 +191,7 @@ function ProductCreate() {
                                     </label>
                                     <input
                                         type="text"
-                                        name={`productDetails[${index}].key`}
+                                        name={`details[${index}].key`}
                                         value={detail.key}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
@@ -193,9 +199,9 @@ function ProductCreate() {
                                         className="border border-gray-300 rounded-lg px-4 py-2"
                                     />
 
-                                    {formik.touched.productDetails?.[index]?.key &&
-                                        formik.errors.productDetails?.[index]?.key && (
-                                            <span className="text-red-500 text-sm">{formik.errors.productDetails[index].key}</span>
+                                    {formik.touched.details?.[index]?.key &&
+                                        formik.errors.details?.[index]?.key && (
+                                            <span className="text-red-500 text-sm">{formik.errors.details[index].key}</span>
                                         )}
                                 </div>
 
@@ -207,16 +213,16 @@ function ProductCreate() {
                                     </label>
                                     <input
                                         type="text"
-                                        name={`productDetails[${index}].value`}
+                                        name={`details[${index}].value`}
                                         value={detail.value}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
                                         placeholder="Enter price"
                                         className="border border-gray-300 rounded-lg px-4 py-2"
                                     />
-                                    {formik.touched.productDetails?.[index]?.value &&
-                                        formik.errors.productDetails?.[index]?.value && (
-                                            <span className="text-red-500 text-sm">{formik.errors.productDetails[index].value}</span>
+                                    {formik.touched.details?.[index]?.value &&
+                                        formik.errors.details?.[index]?.value && (
+                                            <span className="text-red-500 text-sm">{formik.errors.details[index].value}</span>
                                         )}                              </div>
 
 
@@ -227,7 +233,7 @@ function ProductCreate() {
                                     </label>
                                     <input
                                         type="text"
-                                        name={`productDetails[${index}].qty`}
+                                        name={`details[${index}].qty`}
                                         value={detail.qty}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
@@ -235,26 +241,26 @@ function ProductCreate() {
                                         className="border border-gray-300 rounded-lg px-4 py-2"
                                     />
 
-                                    {formik.touched.productDetails?.[index]?.qty &&
-                                        formik.errors.productDetails?.[index]?.qty && (
-                                            <span className="text-red-500 text-sm">{formik.errors.productDetails[index].qty}</span>
+                                    {formik.touched.details?.[index]?.qty &&
+                                        formik.errors.details?.[index]?.qty && (
+                                            <span className="text-red-500 text-sm">{formik.errors.details[index].qty}</span>
                                         )}
                                 </div>
 
 
                                 {/* Delete Button */}
-                                {formik.values.productDetails.length > 1 ?<div className="flex items-center pt-6">
+                                {formik.values.details.length > 1 ? <div className="flex items-center pt-6">
                                     <button
                                         type="button"
                                         onClick={() => {
-                                            deleteProductDetails(index)
+                                            deletedetails(index)
                                         }}
                                         className="h-6 w-6 pb-1 mb-2 flex items-center cursor-pointer justify-center bg-red-500 text-white text-sm rounded-full shadow hover:scale-110 active:scale-95 transition"
                                     >
                                         x
                                     </button>
-                                </div>:null}
-                                
+                                </div> : null}
+
 
                             </div>
                         ))}
