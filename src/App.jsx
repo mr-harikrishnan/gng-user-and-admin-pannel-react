@@ -10,6 +10,7 @@ import ProductsList from './component/adminLayout/content/products/ProductsList'
 import useProducts from './hooks/useProducts'
 import ProductCreate from './component/adminLayout/content/products/ProductsCreate'
 import VeiwProduct from './component/adminLayout/content/products/VeiwProduct'
+import EditProduct from './component/adminLayout/content/products/EditProduct'
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='products' element={<ProductsList></ProductsList>}></Route>
             <Route path='/admin/products/product-create' element={<ProductCreate></ProductCreate>}></Route>
             <Route path='/admin/products/veiw-product/:id' element={<VeiwProduct></VeiwProduct>}></Route>
+            <Route path='/admin/products/edit-product/:id'element={<EditProduct></EditProduct>}></Route>
 
           </Route>
 
