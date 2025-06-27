@@ -25,7 +25,7 @@ function ProductsList() {
               <th className="px-4 py-3">Image</th>
               <th className="px-4 py-3">Title</th>
               <th className="px-4 py-3">Description</th>
-              <th className="px-4 py-3">Details</th>
+              <th className="px-4 py-3">Size - Cost - Qty</th>
               <th className="px-4 py-3">Actions</th>
             </tr>
           </thead>

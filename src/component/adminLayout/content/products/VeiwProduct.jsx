@@ -8,6 +8,7 @@ export default function ViewProduct() {
     const [product, setProduct] = useState(null);
 
     const [sizePrice, setSizePrice] = useState(null)
+    const [sizeColour, setSizeColour] = useState(0)
 
 
     useEffect(() => {
@@ -27,7 +28,7 @@ export default function ViewProduct() {
 
     }, [id]);
 
-    
+
 
     const chnagePrice = (index) => {
         setSizePrice(product.details[index].value)
@@ -63,9 +64,11 @@ export default function ViewProduct() {
                                     <button
                                         onClick={() => {
                                             chnagePrice(index)
+                                            setSizeColour(index)
                                         }}
                                         key={index}
-                                        className="border border-gray-300 px-4 py-2 rounded-lg bg-black text-white transition"
+                                        className={`${index === sizeColour ? "bg-black text-white " : ""}border border-gray-300 px-4 py-2 rounded-lg`}
+
                                     >
                                         {item.key}
                                     </button>
