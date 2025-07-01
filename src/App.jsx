@@ -26,6 +26,10 @@ function App() {
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
           </Route>
 
+          <Route path='https://skydash-user-and-admin.netlify.app/admin' element={<AdminLayout></AdminLayout>}>
+
+          </Route>
+
 
 
           <Route path='/admin' element={<AdminLayout></AdminLayout>}>
