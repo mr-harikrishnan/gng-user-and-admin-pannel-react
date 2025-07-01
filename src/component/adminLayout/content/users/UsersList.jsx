@@ -42,11 +42,13 @@ function UsersList() {
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       {/* User Create */}
       <div className="flex justify-end mb-4">
-        <Link to="usercreate">
-          <button className="border-2 border-gray-400 px-4 py-1 bg-[#3ecc72] rounded text-white font-semibold">
-            User Create +
-          </button>
-        </Link>
+        <div className="flex justify-end mb-6">
+          
+            <button className="bg-gradient-to-r from-[#232232] to-[#9A98B4] cursor-pointer hover:from-[#625f8b] hover:to-[#c3c1e3] text-white px-4 py-2 rounded-lg shadow-md font-semibold transition duration-300">
+              + Create User
+            </button>
+       
+        </div>
       </div>
 
 
@@ -83,8 +85,8 @@ function UsersList() {
                 <td className="py-3 px-4 hidden md:table-cell">
                   <span
                     className={`px-2 py-1 rounded-full text-white text-xs font-medium ${user.status === "Active"
-                        ? "bg-[#232232]"
-                        : "bg-[#a29fc5] "
+                      ? "bg-[#232232]"
+                      : "bg-[#a29fc5] "
                       }`}
                   >
                     {user.status}
