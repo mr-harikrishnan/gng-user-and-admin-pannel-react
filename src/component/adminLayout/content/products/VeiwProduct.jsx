@@ -67,7 +67,7 @@ export default function ViewProduct() {
                                             setSizeColour(index)
                                         }}
                                         key={index}
-                                        className={`${index === sizeColour ? "bg-black text-white " : ""}border border-gray-300 px-4 py-2 rounded-lg`}
+                                        className={`${index === sizeColour ? "bg-black text-white " : ""}border cursor-pointer border-gray-300 px-4 py-2 rounded-lg`}
 
                                     >
                                         {item.key}
@@ -84,10 +84,10 @@ export default function ViewProduct() {
 
                         {/* Buttons */}
                         <div className="flex gap-4 mt-6">
-                            <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+                            <button className="bg-black text-white px-6 py-2 rounded-lg cursor-pointer hover:bg-gray-800 transition">
                                 Add to Cart
                             </button>
-                            <button className="border border-black text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition">
+                            <button className="border border-black text-black px-6 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
                                 Buy Now
                             </button>
                         </div>

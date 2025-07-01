@@ -15,20 +15,20 @@ function DashBoard() {
                             <div className="flex items-center mb-1">
                                 <div className="text-2xl font-semibold">2</div>
                             </div>
-                            <div className="text-sm font-medium text-gray-400">Users</div>
+                            <div className="text-sm font-medium text-gray-400">Total Admin Users</div>
                         </div>
                         <div className="dropdown relative">
                             <button className="text-gray-400 hover:text-gray-600">
                                 <i className="ri-more-fill"></i>
                             </button>
-                            {/* Add dropdown functionality via JavaScript/React if needed */}
+                            {/* Dropdown actions for admin users can go here */}
                         </div>
                     </div>
                     <a
                         href="#"
                         className="text-[#f84525] font-medium text-sm hover:text-red-800"
                     >
-                        View
+                        Manage Users
                     </a>
                 </div>
 
@@ -42,19 +42,20 @@ function DashBoard() {
                                     +30%
                                 </div>
                             </div>
-                            <div className="text-sm font-medium text-gray-400">Companies</div>
+                            <div className="text-sm font-medium text-gray-400">Registered Companies</div>
                         </div>
                         <div className="dropdown relative">
                             <button className="text-gray-400 hover:text-gray-600">
                                 <i className="ri-more-fill"></i>
                             </button>
+                            {/* Dropdown actions for companies */}
                         </div>
                     </div>
                     <a
                         href="#"
                         className="text-[#f84525] font-medium text-sm hover:text-red-800"
                     >
-                        View
+                        View Companies
                     </a>
                 </div>
 
@@ -63,29 +64,31 @@ function DashBoard() {
                     <div className="flex justify-between mb-6">
                         <div>
                             <div className="text-2xl font-semibold mb-1">100</div>
-                            <div className="text-sm font-medium text-gray-400">Blogs</div>
+                            <div className="text-sm font-medium text-gray-400">Published Blogs</div>
                         </div>
                         <div className="dropdown relative">
                             <button className="text-gray-400 hover:text-gray-600">
                                 <i className="ri-more-fill"></i>
                             </button>
+                            {/* Dropdown actions for blogs */}
                         </div>
                     </div>
                     <a
                         href="#"
                         className="text-[#f84525] font-medium text-sm hover:text-red-800"
                     >
-                        View
+                        Manage Blogs
                     </a>
                 </div>
             </div>
+
 
             <div className="p-6 flex flex-col min-w-0 mb-12 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded ">
                 <div className="rounded-t mb-0 px-0 border-0">
                     <div className="flex flex-wrap items-center px-4 py-2">
                         <div className="relative w-full max-w-full flex-grow flex-1">
                             <h3 className="font-semibold text-base text-gray-900 dark:text-gray-50">
-                                Users
+                                User Roles Overview
                             </h3>
                         </div>
                     </div>
@@ -97,9 +100,11 @@ function DashBoard() {
                                         Role
                                     </th>
                                     <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                        Amount
+                                        Number of Users
                                     </th>
-                                    <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
+                                    <th className="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px">
+                                        Activity Level
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -126,7 +131,7 @@ function DashBoard() {
                                 </tr>
                                 <tr className="text-gray-700 dark:text-gray-100">
                                     <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        User
+                                        Moderator
                                     </th>
                                     <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         6
@@ -147,7 +152,7 @@ function DashBoard() {
                                 </tr>
                                 <tr className="text-gray-700 dark:text-gray-100">
                                     <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        User
+                                        Editor
                                     </th>
                                     <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         5
@@ -168,7 +173,7 @@ function DashBoard() {
                                 </tr>
                                 <tr className="text-gray-700 dark:text-gray-100">
                                     <th className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                                        User
+                                        Contributor
                                     </th>
                                     <td className="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         4
@@ -193,9 +198,10 @@ function DashBoard() {
                 </div>
             </div>
 
+
             <div className="bg-white border border-gray-100 shadow-md shadow-black/5 p-6 rounded-md my-4 ">
                 <div className="flex justify-between mb-4 items-start">
-                    <div className="font-medium">Activities</div>
+                    <div className="font-medium">Recent Activities</div>
                     <div className="dropdown">
                         <button
                             type="button"
@@ -219,7 +225,7 @@ function DashBoard() {
                                     href="#"
                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                 >
-                                    Profile
+                                    View Profile
                                 </a>
                             </li>
                             <li>
@@ -227,7 +233,7 @@ function DashBoard() {
                                     href="#"
                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                 >
-                                    Settings
+                                    Account Settings
                                 </a>
                             </li>
                             <li>
@@ -235,7 +241,7 @@ function DashBoard() {
                                     href="#"
                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                 >
-                                    Logout
+                                    Sign Out
                                 </a>
                             </li>
                         </ul>
@@ -251,18 +257,18 @@ function DashBoard() {
                                             href="#"
                                             className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
                                         >
-                                            Lorem Ipsum
+                                            User JohnDoe updated profile settings
                                         </a>
                                     </div>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
                                     <span className="text-[13px] font-medium text-gray-400">
-                                        02-02-2024
+                                        27-06-2025
                                     </span>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
                                     <span className="text-[13px] font-medium text-gray-400">
-                                        17.45
+                                        15:30
                                     </span>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
@@ -289,7 +295,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Profile
+                                                    View Profile
                                                 </a>
                                             </li>
                                             <li>
@@ -297,7 +303,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Settings
+                                                    Account Settings
                                                 </a>
                                             </li>
                                             <li>
@@ -305,7 +311,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Logout
+                                                    Sign Out
                                                 </a>
                                             </li>
                                         </ul>
@@ -319,18 +325,18 @@ function DashBoard() {
                                             href="#"
                                             className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
                                         >
-                                            Lorem Ipsum
+                                            New company account "Acme Corp" registered
                                         </a>
                                     </div>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
                                     <span className="text-[13px] font-medium text-gray-400">
-                                        02-02-2024
+                                        26-06-2025
                                     </span>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
                                     <span className="text-[13px] font-medium text-gray-400">
-                                        17.45
+                                        10:15
                                     </span>
                                 </td>
                                 <td className="py-2 px-4 border-b border-b-gray-50">
@@ -357,7 +363,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Profile
+                                                    View Profile
                                                 </a>
                                             </li>
                                             <li>
@@ -365,7 +371,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Settings
+                                                    Account Settings
                                                 </a>
                                             </li>
                                             <li>
@@ -373,7 +379,7 @@ function DashBoard() {
                                                     href="#"
                                                     className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50"
                                                 >
-                                                    Logout
+                                                    Sign Out
                                                 </a>
                                             </li>
                                         </ul>
@@ -384,6 +390,7 @@ function DashBoard() {
                     </table>
                 </div>
             </div>
+
 
             <div className="bg-white border border-gray-100 shadow-md shadow-black/5 p-6 rounded-md lg:col-span-2 h-max">
                 <div className="flex justify-between mb-4 items-start">
@@ -441,7 +448,7 @@ function DashBoard() {
                                 $80
                             </span>
                         </div>
-                        <span className="text-gray-400 text-sm">Active</span>
+                        <span className="text-gray-400 text-sm">Active Orders</span>
                     </div>
                     <div className="rounded-md border border-dashed border-gray-200 p-4">
                         <div className="flex items-center mb-0.5">
@@ -450,7 +457,7 @@ function DashBoard() {
                                 +$469
                             </span>
                         </div>
-                        <span className="text-gray-400 text-sm">Completed</span>
+                        <span className="text-gray-400 text-sm">Completed Orders</span>
                     </div>
                     <div className="rounded-md border border-dashed border-gray-200 p-4">
                         <div className="flex items-center mb-0.5">
@@ -459,13 +466,12 @@ function DashBoard() {
                                 -$130
                             </span>
                         </div>
-                        <span className="text-gray-400 text-sm">Canceled</span>
+                        <span className="text-gray-400 text-sm">Cancelled Orders</span>
                     </div>
                 </div>
-                <div>
-
-                </div>
+                <div></div>
             </div>
+
 
             <div className="bg-white border border-gray-100 shadow-md shadow-black/5 p-6 rounded-md">
                 <div className="flex justify-between mb-4 items-start">
