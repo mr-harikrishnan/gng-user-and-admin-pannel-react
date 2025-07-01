@@ -11,6 +11,7 @@ import useProducts from './hooks/useProducts'
 import ProductCreate from './component/adminLayout/content/products/ProductsCreate'
 import VeiwProduct from './component/adminLayout/content/products/VeiwProduct'
 import EditProduct from './component/adminLayout/content/products/EditProduct'
+import UserViewProduct from './component/userLayout/product/veiwProduct/UserVeiwProduct'
 
 
 
@@ -21,7 +22,10 @@ function App() {
       <div className='h-screen w-full overflow-hidden'>
         <Routes>
 
-        <Route path='/' element={<UserLayout></UserLayout>}></Route>
+          <Route path='/skydash' element={<UserLayout></UserLayout>}>
+            <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
+          </Route>
+
 
 
           <Route path='/admin' element={<AdminLayout></AdminLayout>}>
@@ -31,7 +35,7 @@ function App() {
             <Route path='products' element={<ProductsList></ProductsList>}></Route>
             <Route path='/admin/products/product-create' element={<ProductCreate></ProductCreate>}></Route>
             <Route path='/admin/products/veiw-product/:id' element={<VeiwProduct></VeiwProduct>}></Route>
-            <Route path='/admin/products/edit-product/:id'element={<EditProduct></EditProduct>}></Route>
+            <Route path='/admin/products/edit-product/:id' element={<EditProduct></EditProduct>}></Route>
 
           </Route>
 

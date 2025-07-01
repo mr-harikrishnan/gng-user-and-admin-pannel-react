@@ -1,50 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
-let productDetails=product.details
-let a=console.log("data",productDetails.key)
 
 
-  
+
   return (
-    <div className="w-72 rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+    <div className="w-72   rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
       {/* Image Section */}
-      <div className="w-full h-72 overflow-hidden">
-        <img
-          className="w-full h-full object-cover"
-          src={product.image}
-          alt="Unisex Jerkin"
-        />
-      </div>
+      <Link to={`veiwProduct/${product.id}`}>
+        <div className="w-full h-72 overflow-hidden">
+          <img
+            className="w-full h-full object-cover cursor-pointer"
+            src={product.image}
+            alt="Unisex Jerkin"
+          />
+        </div>
+      </Link>
+
 
       {/* Details Section */}
-      <div className="bg-[#232232] text-white px-4 py-5 space-y-3">
+      <div className="bg-[#f3f0f5] text-[#2C3E50] px-4 py-5 space-y-3">
         {/* Title */}
-        <h2 className="text-xl font-semibold">{product.title}</h2>
+        <h2 className="text-xl font-semibold">{product.title.slice(0,20)}</h2>
 
         {/* Description */}
-        <p className="text-sm text-gray-300 leading-snug">
-          {product.description.slice(0,35)}...
+        <p className="text-sm text-[#5D6D7E] leading-snug">
+          {product.description.slice(0, 30)}...
         </p>
 
-        {/* Sizes */}
-        <div className="flex flex-wrap gap-2">
-          {productDetails.map((size) => (
-            <span
-              className="px-2 py-0.5 bg-white text-[#232232] text-sm font-medium rounded-md cursor-pointer hover:bg-gray-200"
-            >
-              {size.key}
-            </span>
-          ))}
-        </div>
 
 
         {/* Price & Add Button */}
         <div className="flex items-center justify-between pt-3">
-          <p className="text-sm text-gray-300">
-            Price ₹ <span className="text-lg font-bold text-white">450</span> /-
+          <p className="text-sm text-[#5D6D7E]">
+            Price ₹ <span className="text-lg font-bold text-[#2C3E50]">{product.details[0].value}</span> /-
           </p>
-          <button className="bg-white text-[#232232] font-bold text-sm px-3 py-1 rounded hover:bg-gray-200 transition">
+          <button className="bg-[#232232] cursor-pointer text-white font-bold text-sm px-4 py-1.5 rounded hover:bg-[#726db7] transition">
             ADD TO CART
           </button>
         </div>
