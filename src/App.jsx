@@ -22,7 +22,7 @@ function App() {
       <div className='h-screen w-full overflow-hidden'>
         <Routes>
 
-          <Route path='/skydash' element={<UserLayout></UserLayout>}>
+          <Route path='/' element={<UserLayout></UserLayout>}>
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
           </Route>
 
