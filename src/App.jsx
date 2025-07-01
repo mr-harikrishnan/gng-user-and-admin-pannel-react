@@ -24,11 +24,10 @@ function App() {
 
           <Route path='/' element={<UserLayout></UserLayout>}>
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
+            <Route path='admin/dashboard' element={<AdminLayout></AdminLayout>}></Route>
           </Route>
 
-          <Route path='https://skydash-user-and-admin.netlify.app/admin' element={<AdminLayout></AdminLayout>}>
 
-          </Route>
 
 
 
@@ -40,7 +39,7 @@ function App() {
             <Route path='/admin/products/product-create' element={<ProductCreate></ProductCreate>}></Route>
             <Route path='/admin/products/veiw-product/:id' element={<VeiwProduct></VeiwProduct>}></Route>
             <Route path='/admin/products/edit-product/:id' element={<EditProduct></EditProduct>}></Route>
-
+            
           </Route>
 
         </Routes>
