@@ -24,7 +24,7 @@ function App() {
 
           <Route path='/' element={<UserLayout></UserLayout>}>
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
-            <Route path='admin/dashboard' element={<AdminLayout></AdminLayout>}></Route>
+    
           </Route>
 
 
