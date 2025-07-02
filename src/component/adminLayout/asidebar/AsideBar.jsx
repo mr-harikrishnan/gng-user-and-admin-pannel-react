@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function AsideBar({ isSideBarOpen, toggleSideBar }) {
     return (
 
-        <div className={`${isSideBarOpen ? "block" : "hidden"} lg:block  min-w-[15%] fixed lg:relative h-screen bg-[#232232] p-2 `}>
+        <div className={`${isSideBarOpen ? "block" : "hidden"} lg:block  min-w-[15%] fixed lg:relative h-screen bg-[#232232] p-2 z-50`}>
 
             <svg className="fixed lg h-6 w-6 left-48 bottom lg:hidden" onClick={() => {
                 toggleSideBar()
