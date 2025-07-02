@@ -24,7 +24,6 @@ function App() {
 
           <Route path='/' element={<UserLayout></UserLayout>}>
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
-    
           </Route>
 
 
