@@ -13,11 +13,13 @@ export default function NavBar() {
                 <svg className="mx-3 w-8 lg:hidden" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
+                <Link to={`/`}>
+                    <div className=' '>
+                        <h1 className='font-semibold text-[1.1rem]  tracking-[3px] text-[#232232]'>SKYDASH</h1>
+                        <p className='text-black text-[0.7rem]'>E-Commerse </p>
+                    </div>
+                </Link>
 
-                <div className=' '>
-                    <h1 className='font-semibold text-[1.1rem]  tracking-[3px] text-[#232232]'>SKYDASH</h1>
-                    <p className='text-black text-[0.7rem]'>E-Commerse </p>
-                </div>
 
                 <div className=' w-full flex justify-end items-center'>
                     <input className='w-42 border rounded-lg py-1 border-gray-300 ps-4' placeholder='search' type="text" />
