@@ -38,7 +38,7 @@ export default function UserViewProduct() {
     if (!product) return <p className="text-center py-10">Loading product...</p>;
 
     return (
-        <section className="py-12 bg-gray-100 font-sans">
+        <section className="py-12 bg-gray-100 font-sans h-screen">
             <div className="max-w-4xl mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white p-6 rounded-2xl shadow-md">
 

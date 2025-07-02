@@ -12,6 +12,7 @@ import ProductCreate from './component/adminLayout/content/products/ProductsCrea
 import VeiwProduct from './component/adminLayout/content/products/VeiwProduct'
 import EditProduct from './component/adminLayout/content/products/EditProduct'
 import UserViewProduct from './component/userLayout/product/veiwProduct/UserVeiwProduct'
+import Products from './component/userLayout/product/products/Products'
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Routes>
 
           <Route path='/' element={<UserLayout></UserLayout>}>
+            <Route index element={<Products></Products>}></Route>
             <Route path='veiwProduct/:id' element={<UserViewProduct></UserViewProduct>}></Route>
           </Route>
 
@@ -31,6 +33,7 @@ function App() {
 
 
           <Route path='/admin' element={<AdminLayout></AdminLayout>}>
+            <Route index element={<DashBoard></DashBoard>}></Route>
             <Route path='dashboard' element={<DashBoard></DashBoard>}></Route>
             <Route path='users' element={<UsersList></UsersList>}></Route>
             <Route path='/admin/users/usercreate' element={<UserCreate></UserCreate>}></Route>
@@ -38,7 +41,7 @@ function App() {
             <Route path='/admin/products/product-create' element={<ProductCreate></ProductCreate>}></Route>
             <Route path='/admin/products/veiw-product/:id' element={<VeiwProduct></VeiwProduct>}></Route>
             <Route path='/admin/products/edit-product/:id' element={<EditProduct></EditProduct>}></Route>
-            
+
           </Route>
 
         </Routes>

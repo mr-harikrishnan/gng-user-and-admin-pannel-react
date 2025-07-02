@@ -18,13 +18,6 @@ function UserLayout() {
       <Outlet />
 
  
-      {!isProductViewPage && (
-        <div className='flex flex-wrap justify-center gap-4 lg:justify-start p-2 md:gap-12 xl:gap-4 h-screen overflow-auto pb-24'>
-          {products.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
