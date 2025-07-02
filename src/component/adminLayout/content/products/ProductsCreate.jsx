@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 function ProductCreate() {
@@ -7,7 +8,7 @@ function ProductCreate() {
 
 
 
-
+    const navigate = useNavigate();
     const formik = useFormik({
 
         initialValues: {
@@ -82,6 +83,7 @@ function ProductCreate() {
         onSubmit: async (values) => {
             try {
                 const newdetails = await axios.post("https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products", values)
+                navigate("/admin/products")
 
             } catch (error) {
                 console.log(error)
@@ -271,7 +273,7 @@ function ProductCreate() {
                     <div className="md:col-span-2 flex justify-center">
                         <button
                             type="submit"
-                            className="mt-4 bg-[#232232] text-white font-semibold px-6 py-2 rounded shadow hover:bg-[#3a3a4a] transition"
+                            className="mt-4 cursor-pointer bg-[#232232] text-white font-semibold px-6 py-2 rounded shadow hover:bg-[#3a3a4a] transition"
                         >
                             SUBMIT
                         </button>
